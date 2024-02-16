@@ -1,0 +1,38 @@
+{
+	"name": "vag_monorepr",
+	"version": "0.0.1",
+	"description": "The root directory of the vag packages",
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/charlyoleg2/vag.git"
+	},
+	"keywords": [
+		"git",
+		"sub-module",
+		"sub-repo"
+	],
+	"author": "charlyoleg2",
+	"scripts": {
+		"vag:dev": "npm -w vag run dev",
+		"vag:ci": "npm -w vag run ci",
+		"vag:clean": "npm -w vag run clean",
+		"vag:version": "npm -w vag version patch",
+		"vag:publish": "npm -w vag publish --provenance",
+		"dev": "run-p vag:dev",
+		"ci": "run-s vag:ci",
+		"clean-root": "shx rm -fr tmp output output2 build",
+		"clean": "run-s clean-root vag:clean",
+		"versions": "run-s vag:version",
+		"gh-publish": "run-s vag:publish",
+		"ls-workspaces": "npm -ws exec -c pwd"
+	},
+	"workspaces": [
+		"pkg/*"
+	],
+	"type": "module",
+	"devDependencies": {
+		"npm-run-all": "^4.1.5",
+		"shx": "^0.3.4"
+	}
+}

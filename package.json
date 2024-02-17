@@ -18,7 +18,7 @@
 		"vag:ci": "npm -w vag run ci",
 		"vag:clean": "npm -w vag run clean",
 		"vag:version": "npm -w vag version patch",
-		"vag:publish": "npm -w vag publish --provenance",
+		"vag:publish": "npm -w vag publish --provenance --access public",
 		"vag_homepage:dev": "npm -w vag_homepage run dev",
 		"vag_homepage:ci": "npm -w vag_homepage run ci",
 		"vag_homepage:clean": "npm -w vag_homepage run clean",

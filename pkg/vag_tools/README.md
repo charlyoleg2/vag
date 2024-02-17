@@ -42,7 +42,7 @@ repositories:
   repos/parame_paxApps:
     url: https://github.com/charlyoleg2/parame_paxApps.git
     version: main
-  repos/parame51:
+  parame51:
     url: https://github.com/charlyoleg2/parame51.git
     version: main
 ```

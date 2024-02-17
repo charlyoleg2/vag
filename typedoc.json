@@ -1,0 +1,12 @@
+{
+	"entryPoints": ["pkg/vag"],
+	"name": "Vag",
+	"entryPointStrategy": "packages",
+	"out": "build/apidoc",
+	"navigationLinks": {
+		"Vag package": "https://www.npmjs.com/package/vag",
+		"Vag sources": "https://github.com/charlyoleg2/vag",
+		"Vag homepage": "https://charlyoleg2.github.io/vag/"
+	},
+	"includeVersion": false
+}

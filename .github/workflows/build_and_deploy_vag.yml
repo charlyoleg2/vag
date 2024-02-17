@@ -1,0 +1,54 @@
+# build_and_deploy_vag.yml
+
+name: Build and Deploy Vag
+on: [push]
+jobs:
+    build-and-deploy:
+        concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+            id-token: write
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Automatic update of the github release
+              if: github.ref_type == 'tag'
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  tag: ${{ github.ref_name }}
+              run: |
+                  gh release create "$tag" \
+                    --repo="$GITHUB_REPOSITORY" \
+                    --title="${GITHUB_REPOSITORY#*/} ${tag#v}" \
+                    --generate-notes
+
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: '20'
+                  registry-url: 'https://registry.npmjs.org/'
+
+            - name: clean and install
+              run: npm ci
+
+            - name: Build and check Vag
+              env:
+                  BASE_PATH: '/vag'
+              run: |
+                  npm run ci
+                  npm -w vag_homepage run github-pages-fix
+
+            - name: Deploy Vag to GitHub pages
+              uses: crazy-max/ghaction-github-pages@v4
+              with:
+                  target_branch: gh-pages
+                  build_dir: pkg/vag_homepage/build
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Publish
+              if: github.ref_type == 'tag'
+              run: npm run gh-publish
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

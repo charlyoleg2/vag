@@ -7,7 +7,7 @@
 	"types": "./dist/vag_api.d.ts",
 	"bin": {
 		"vag": "./dist/vag_cli.js",
-		"vagg": "./dist/vagg_cli.js"
+		"vagg": "./dist/vagg_server.js"
 	},
 	"files": [
 		"dist/**/*.js",
@@ -19,7 +19,7 @@
 	"tsup": {
 		"entry": [
 			"src/vag_cli.ts",
-			"src/vagg_cli.ts"
+			"src/vagg_server.ts"
 		],
 		"format": "esm",
 		"splitting": false,

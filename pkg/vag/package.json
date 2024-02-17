@@ -10,8 +10,10 @@
 		"vagg": "./dist/vagg_server.js"
 	},
 	"files": [
-		"dist/**/*.js",
-		"dist/**/*.d.ts"
+		"dist/",
+		"!dist/**/*.map",
+		"!dist/**/*.test.*",
+		"!dist/**/*.spec.*"
 	],
 	"engines": {
 		"node": ">=20.10.0"

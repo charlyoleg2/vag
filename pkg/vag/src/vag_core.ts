@@ -6,10 +6,9 @@ import fsp from 'node:fs/promises';
 import fse from 'fs-extra';
 import YAML from 'yaml';
 import { simpleGit } from 'simple-git';
+import packag from '../package.json';
 
-const vag_version_short = '0.0.1';
-const vag_version_long = 'vag_0.0.1.0_d2e7b9ef_20240215_085131';
-
+const vag_version_short = packag.version;
 const regex_pointSlash = /^\.\//;
 const regex_trailingSlash = /\/$/;
 
@@ -624,16 +623,6 @@ class Vag {
 	 */
 	static version_short(): string {
 		return vag_version_short;
-	}
-
-	/**
-	 * Return a long string including the last commit hash, timestamp, build-number.
-	 * The string composition is PackageName_Major.Minor.Patch.BuildNumber_CommitHash_BuildDate_BuildTime
-	 *
-	 * @returns a long string with version information
-	 */
-	static version_long(): string {
-		return vag_version_long;
 	}
 }
 

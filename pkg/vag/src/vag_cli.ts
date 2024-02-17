@@ -264,5 +264,4 @@ if (cmd.validate_yaml) {
 
 if (cmd.versions) {
 	console.log(`vag-version-short : ${Vag.version_short()}`);
-	console.log(`vag-version-long  : ${Vag.version_long()}`);
 }

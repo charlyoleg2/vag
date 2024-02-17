@@ -1,5 +1,5 @@
-README of vag (core-package)
-============================
+README of vag-tools
+===================
 
 
 Presentation

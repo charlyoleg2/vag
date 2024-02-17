@@ -9,7 +9,7 @@ It currently supports only *git* repositories.
 
 *Vag* is inspired by [vcstool](https://github.com/dirk-thomas/vcstool),
 [subg](https://github.com/charlyoleg/subg),
-[simplest-git-repos](https://github.com/jmnavarrol/simplest-git-subrepos) and
+[simplest-git-subrepos](https://github.com/jmnavarrol/simplest-git-subrepos) and
 [multigit](https://github.com/jmnavarrol/python-multigit)
 
 

@@ -1,6 +1,6 @@
 {
 	"name": "vag_tools",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"description": "api and cli for managing sub-git-repositories",
 	"type": "module",
 	"main": "./dist/vag_core.js",

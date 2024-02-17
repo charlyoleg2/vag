@@ -1,5 +1,5 @@
 {
-	"name": "vag",
+	"name": "vag_tools",
 	"version": "0.0.3",
 	"description": "api and cli for managing sub-git-repositories",
 	"type": "module",

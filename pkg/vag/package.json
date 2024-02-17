@@ -43,7 +43,7 @@
 		"test:coverage": "vitest run --coverage",
 		"test": "run-s test:basic test:cli test:vitest",
 		"dist:build": "tsc --build tsconfig.dist.json",
-		"clean_all": "run-s clean doc:api:clean"
+		"clean_all": "run-s clean"
 	},
 	"repository": {
 		"type": "git",
@@ -80,7 +80,6 @@
 		"prettier": "^3.2.5",
 		"shx": "^0.3.4",
 		"tsup": "^8.0.2",
-		"typedoc": "^0.25.8",
 		"typescript": "^5.3.3",
 		"typescript-eslint": "^7.0.1",
 		"vitest": "^1.2.2"

@@ -3,8 +3,8 @@
 	"version": "0.0.3",
 	"description": "api and cli for managing sub-git-repositories",
 	"type": "module",
-	"main": "./dist/vag_api.js",
-	"types": "./dist/vag_api.d.ts",
+	"main": "./dist/vag_core.js",
+	"types": "./dist/vag_core.d.ts",
 	"bin": {
 		"vag": "dist/vag_cli.js",
 		"vagg": "dist/vagg_server.js"
@@ -20,6 +20,7 @@
 	},
 	"tsup": {
 		"entry": [
+			"src/vag_core.ts",
 			"src/vag_cli.ts",
 			"src/vagg_server.ts"
 		],

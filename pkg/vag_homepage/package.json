@@ -13,6 +13,7 @@
 		"lint": "prettier --check . && eslint .",
 		"ci": "run-s build lint check test:unit:once",
 		"format": "prettier --write .",
+		"github-pages-fix": "touch build/.nojekyll",
 		"clean": "shx rm -fr .svelte-kit build node_modules static/apidoc"
 	},
 	"devDependencies": {

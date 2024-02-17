@@ -176,14 +176,14 @@ async function git_custom(repoPath: string, gitCommand: string): Promise<number>
 	return r_code;
 }
 
-interface RepoInfo {
+interface tRepoInfo {
 	localPath: string;
 	url: string;
 	branch: string;
 	commit: string;
 }
 
-async function one_repo_info(localPath: string): Promise<RepoInfo> {
+async function one_repo_info(localPath: string): Promise<tRepoInfo> {
 	let one_info = {
 		localPath: 'undefined',
 		url: 'undefined',
@@ -216,7 +216,7 @@ async function one_repo_info(localPath: string): Promise<RepoInfo> {
 	return one_info;
 }
 
-async function get_repos_info(repos: string[]): Promise<RepoInfo[]> {
+async function get_repos_info(repos: string[]): Promise<tRepoInfo[]> {
 	const repos_info = [];
 	for (const [idx, localPath] of repos.entries()) {
 		console.log(`===> ${idx + 1} - get info of git-repo  ${localPath}`);
@@ -270,10 +270,12 @@ function isPathAbsolute(path: string): boolean {
 	return r_absolute;
 }
 
-/** The interface `RepoC` is used to construct the property `listC`. */
-interface RepoC {
-	url: string;
-	version: string;
+/** The interface `tListC` is used to construct the property `listC`. */
+interface tListC {
+	[p: string]: {
+		url: string;
+		version: string;
+	};
 }
 
 /** The interface `tFileYaml` is used to generate the object that will be exported as Yaml-file. */
@@ -302,7 +304,7 @@ class Vag {
 	/** The list of the path of the discovered repositories. It is populated by the `init()` method. */
 	listD: string[];
 	/** An object with the content of the yaml-file. It is populated by the `init()` method. */
-	listC: { [p: string]: RepoC };
+	listC: tListC;
 
 	/**
 	 * The constructor of the `Vag` class.
@@ -635,4 +637,5 @@ class Vag {
 	}
 }
 
+export type { tListC };
 export { Vag };

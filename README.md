@@ -8,10 +8,10 @@ Presentation
 It currently supports only *git* repositories.
 
 *Vag* is inspired by:
-- [vcstool](https://github.com/dirk-thomas/vcstool),
-- [subg](https://github.com/charlyoleg/subg),
-- [simplest-git-subrepos](https://github.com/jmnavarrol/simplest-git-subrepos) and
-- [multigit](https://github.com/jmnavarrol/python-multigit)
+- [vcstool](https://github.com/dirk-thomas/vcstool) managing the sub-repos of [ROS](http://docs.ros.org/)
+- [subg](https://github.com/charlyoleg/subg), a PoC of porting *vcstool* in the *javascript* ecosystem
+- [simplest-git-subrepos](https://github.com/jmnavarrol/simplest-git-subrepos), thoughts about sub-repositories
+- [multigit](https://github.com/jmnavarrol/python-multigit), a *Python* tool for managing sub-repos
 
 
 Using the *vag* CLI

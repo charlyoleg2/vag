@@ -3,6 +3,7 @@
 	"version": "0.0.6",
 	"description": "api and cli for managing sub-git-repositories",
 	"type": "module",
+	"private": false,
 	"main": "./dist/vag_core.js",
 	"types": "./dist/vag_core.d.ts",
 	"bin": {

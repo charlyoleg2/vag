@@ -35,7 +35,7 @@ async function isGitRepo(pathDir2: string): Promise<boolean> {
 				isRepo = true;
 			}
 		} catch (err) {
-			//console.log(err);
+			console.log(err);
 		}
 		if (!isRepo) {
 			console.log(

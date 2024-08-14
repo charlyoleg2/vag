@@ -77,15 +77,15 @@
 	},
 	"devDependencies": {
 		"@types/fs-extra": "^11.0.4",
-		"@types/node": "^22.1.0",
-		"@types/yargs": "^17.0.32",
-		"eslint": "^9.8.0",
+		"@types/node": "^22.3.0",
+		"@types/yargs": "^17.0.33",
+		"eslint": "^9.9.0",
 		"npm-run-all": "^4.1.5",
 		"prettier": "^3.3.3",
 		"shx": "^0.3.4",
 		"tsup": "^8.2.4",
 		"typescript": "^5.5.4",
-		"typescript-eslint": "^8.0.0",
+		"typescript-eslint": "^8.1.0",
 		"vitest": "^2.0.5"
 	},
 	"prettier": {

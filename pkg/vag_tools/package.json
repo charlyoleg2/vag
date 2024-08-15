@@ -23,7 +23,8 @@
 		"entry": [
 			"src/vag_core.ts",
 			"src/vag_cli.ts",
-			"src/vagg_server.ts"
+			"src/vagg_server.ts",
+			"src/tester_websocket_client.ts"
 		],
 		"format": "esm",
 		"splitting": false,
@@ -75,6 +76,7 @@
 		"hono": "^4.5.5",
 		"simple-git": "^3.25.0",
 		"socket.io": "^4.7.5",
+		"socket.io-client": "^4.7.5",
 		"yaml": "^2.5.0",
 		"yargs": "^17.7.2"
 	},
@@ -86,7 +88,6 @@
 		"npm-run-all": "^4.1.5",
 		"prettier": "^3.3.3",
 		"shx": "^0.3.4",
-		"socket.io-client": "^4.7.5",
 		"tsup": "^8.2.4",
 		"typescript": "^5.5.4",
 		"typescript-eslint": "^8.1.0",

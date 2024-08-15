@@ -43,6 +43,8 @@
 		"test:unit:once": "vitest --run",
 		"ci": "run-s check build pretty lint",
 		"clean": "shx rm -fr build dist tmp",
+		"run:server": "node dist/vagg_server.js",
+		"run:clients": "tests/run_clients.sh",
 		"test:basic": "node build/tests/vag.test.js",
 		"test:cli": "tests/vag-cli.test.sh",
 		"test:coverage": "vitest run --coverage",

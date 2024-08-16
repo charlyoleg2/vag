@@ -19,12 +19,15 @@ const httpServer = serve({
 
 // http endpoints
 app.get('/', (ctx) => {
-	return ctx.text('Hello Hono!');
+	return ctx.text('Hello from root');
+});
+app.get('/abc', (ctx) => {
+	return ctx.text('Hello from /abc');
 });
 
 // static-server middleware
 app.use(
-	'/ui/*',
+	'*',
 	serveStatic({
 		root: './static',
 		onNotFound: (path, ctx) => {

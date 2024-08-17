@@ -41,8 +41,6 @@ npm package:
 	}
 	header {
 		margin: 1rem;
-		margin-top: 5rem;
-		margin-bottom: 5rem;
 	}
 	h1 {
 		color: aquamarine;
@@ -52,6 +50,7 @@ npm package:
 	main {
 		background-color: GhostWhite;
 		min-height: 70vh;
+		padding: 1rem;
 		padding-top: 2rem;
 		padding-bottom: 3rem;
 	}

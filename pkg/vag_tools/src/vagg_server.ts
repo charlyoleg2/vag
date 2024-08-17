@@ -2,9 +2,9 @@
 // vagg_server.ts
 
 import { Hono } from 'hono';
-import { serve } from '@hono/node-server';
+import { serve as honoServer } from '@hono/node-server';
 import { serveStatic } from '@hono/node-server/serve-static';
-import { Server } from 'socket.io';
+import { Server as WSserver } from 'socket.io';
 import type { Server as HTTPServer } from 'node:http';
 
 console.log('hello from vagg_server.ts!');
@@ -12,24 +12,21 @@ console.log('hello from vagg_server.ts!');
 const app = new Hono();
 const port = 3000;
 
-const httpServer = serve({
+const httpServer = honoServer({
 	fetch: app.fetch,
 	port: 3000
 });
 
 // http endpoints
-app.get('/', (ctx) => {
-	return ctx.text('Hello from root');
-});
-app.get('/abc', (ctx) => {
-	return ctx.text('Hello from /abc');
+app.get('/api/abc', (ctx) => {
+	return ctx.text('Hello from /api/abc');
 });
 
 // static-server middleware
 app.use(
 	'*',
 	serveStatic({
-		root: './static',
+		root: './dist/public', // TODO: change it to absolute path
 		onNotFound: (path, ctx) => {
 			console.log(`dbg028: ${path} is not found, request to ${ctx.req.path}`);
 		}
@@ -37,7 +34,7 @@ app.use(
 );
 
 // websocket
-const io = new Server(httpServer as HTTPServer, {});
+const io = new WSserver(httpServer as HTTPServer, {});
 
 io.on('connection', (socket) => {
 	socket.emit('hello', 'worldy');

@@ -10,8 +10,11 @@ echo "" # add a return character for better looking log
 #echo ""
 
 # check static-server
-curl http://localhost:3000
+echo "http-GET http://localhost:3000"
+curl --head http://localhost:3000
+echo "http-GET http://localhost:3000/_app/version.json"
 curl http://localhost:3000/_app/version.json
+echo ""
 
 # chech socket.io (websocket)
 node dist/tester_websocket_client.js

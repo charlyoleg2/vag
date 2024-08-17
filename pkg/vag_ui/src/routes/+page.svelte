@@ -1,2 +1,4 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<h1>Trigger a sequence of tasks</h1>
+<p><button>task-1</button></p>
+<p><button>task-2</button></p>
+<p><button>task-3</button></p>

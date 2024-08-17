@@ -13,6 +13,10 @@
 		"sub-repo"
 	],
 	"author": "charlyoleg2",
+	"type": "module",
+	"workspaces": [
+		"pkg/*"
+	],
 	"scripts": {
 		"vag_ui:dev": "npm -w vag_ui run dev",
 		"vag_ui:ci": "npm -w vag_ui run ci",
@@ -43,10 +47,6 @@
 		"serve_homepage": "serve pkg/vag_homepage/build",
 		"ls-workspaces": "npm -ws exec -c pwd"
 	},
-	"workspaces": [
-		"pkg/*"
-	],
-	"type": "module",
 	"devDependencies": {
 		"npm-run-all": "^4.1.5",
 		"serve": "^14.2.3",

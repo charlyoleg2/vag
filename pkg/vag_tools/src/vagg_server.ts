@@ -21,6 +21,10 @@ const httpServer = honoServer({
 app.get('/api/abc', (ctx) => {
 	return ctx.text('Hello from /api/abc');
 });
+app.get('/api/currDir', (ctx) => {
+	const rCurrDir = process.cwd();
+	return ctx.text(rCurrDir);
+});
 
 // static-server middleware
 app.use(

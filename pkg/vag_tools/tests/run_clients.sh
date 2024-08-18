@@ -8,6 +8,8 @@ curl http://localhost:3000/api/abc
 echo "" # add a return character for better looking log
 #curl http://localhost:3000
 #echo ""
+curl http://localhost:3000/api/currDir
+echo ""
 
 # check static-server
 echo "http-GET http://localhost:3000"

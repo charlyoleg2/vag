@@ -15,12 +15,15 @@
 	<article>
 		<ol>
 			<li><a href="https://charlyoleg2.github.io/vag">homepage</a></li>
-			<li><a href="https://www.npmjs.com/package/vag">npm-package</a></li>
+			<li><a href="https://www.npmjs.com/package/vag_tools">npm-package</a></li>
 			<li><a href="https://github.com/charlyoleg2/vag">sources</a></li>
+		</ol>
+	</article>
+	<article>
+		<h6>Examples</h6>
+		<ol>
 			<li>
-				<a href="https://github.com/charlyoleg2/parametrix_vag"
-					>parametrix_vag, an example</a
-				>
+				<a href="https://github.com/charlyoleg2/parametrix_vag">parametrix_vag</a>
 			</li>
 		</ol>
 	</article>
@@ -56,7 +59,7 @@ npm package:
 	}
 	footer {
 		margin: 1rem;
-		margin-top: 5rem;
+		margin-top: 2rem;
 		margin-bottom: 5rem;
 	}
 </style>

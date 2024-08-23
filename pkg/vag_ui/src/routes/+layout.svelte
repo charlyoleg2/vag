@@ -1,12 +1,26 @@
 <script lang="ts">
 	//import { base } from '$app/paths';
+	import { onMount } from 'svelte';
 	import appPackage from '../../package.json';
-	const currDir = '/home/abc';
+	let currDir = 'unknown';
+	onMount(async () => {
+		try {
+			const res = await fetch('/api/currDir');
+			if (res.ok) {
+				currDir = await res.text();
+			} else {
+				throw `err312: fetch response status ${res.status}`;
+			}
+		} catch (err) {
+			console.log(`err621: error while fetching /api/currDir`);
+			console.log(err);
+		}
+	});
 </script>
 
 <header>
 	<h1>Vag webUI</h1>
-	<span>running in the directory {currDir}</span>
+	<span>running in the directory : {currDir}</span>
 </header>
 <main>
 	<slot />

@@ -71,7 +71,7 @@
 		"run:check": "run-s run:ref run:diff",
 		"cycle": "run-s clean ci run",
 		"clean:template": "shx rm -fr dist/template",
-		"clean:build": "shx rm -fr dist",
+		"clean:build": "shx rm -fr dist node_modules",
 		"clean:output": "shx rm -fr tmp tmp2",
 		"clean": "run-s clean:build clean:output"
 	},

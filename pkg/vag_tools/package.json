@@ -45,7 +45,7 @@
 		"copy": "shx cp -r ../vag_ui/build dist/public",
 		"checkCopy": "ls -l dist/public/index.html",
 		"ci": "run-s check build pretty lint test:unit:once clean_public copy checkCopy",
-		"clean": "shx rm -fr build dist tmp",
+		"clean": "shx rm -fr build dist tmp node_modules",
 		"run:cli": "node dist/vag_cli.js",
 		"run:server": "node dist/vagg_server.js",
 		"run:clients": "tests/run_clients.sh",

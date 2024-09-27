@@ -105,7 +105,7 @@ async function generate_boirlerplate(cfg1: tCfg1, preDir: string): Promise<tResp
 	console.log(`generate ${template_file_list.length} files in ${preDir}/${cfg1.repoName}/`);
 	await sleep(100);
 	const rResp: tResp = {
-		vim: `vim ${cfg1.projName}_repos.yaml`
+		vim: `vim ${cfg1.projName}_repos.yml`
 	};
 	return rResp;
 }

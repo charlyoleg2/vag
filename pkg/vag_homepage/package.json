@@ -1,6 +1,6 @@
 {
 	"name": "vag_homepage",
-	"version": "0.0.9",
+	"version": "0.0.10",
 	"description": "The homepage-website of vag",
 	"private": true,
 	"type": "module",

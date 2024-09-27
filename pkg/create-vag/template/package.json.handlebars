@@ -1,0 +1,35 @@
+{
+	"name": "{{projName}}_vag",
+	"version": "0.0.1",
+	"description": "top-repo that points to the other {{projName}} repositories",
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/MYNAME/{{projName}}_vag.git"
+	},
+	"homepage": "https://github.com/MYNAME/{{projName}}_vag#readme",
+	"author": "MYNAME",
+	"license": "ISC",
+	"keywords": [
+		"{{projName}}",
+		"vag"
+	],
+	"type": "module",
+	"main": "index.js",
+	"scripts": {
+		"vag-list": "vag --importYaml={{projName}}_repos.yml list",
+		"vag-clone": "vag --importYaml={{projName}}_repos.yml clone",
+		"vag-status": "vag --importYaml={{projName}}_repos.yml --only_configured status",
+		"vag-diff": "vag --importYaml={{projName}}_repos.yml --only_configured diff",
+		"vag-branch": "vag branch",
+		"vag-remote": "vag remote",
+		"vag-pull": "vag pull",
+		"vag-push": "vag push",
+		"vag-verify": "vag verify --importYaml={{projName}}_repos.yml",
+		"vag-versions": "vag versions",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"devDependencies": {
+		"vag_tools": "^0.0.7"
+	}
+}

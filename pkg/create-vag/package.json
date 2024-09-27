@@ -1,0 +1,97 @@
+{
+	"name": "create-vag",
+	"version": "0.1.5",
+	"description": "The npm-initializer for creating a new vag repo",
+	"private": false,
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/charlyoleg2/create-vag.git"
+	},
+	"homepage": "https://www.npmjs.com/package/create-vag",
+	"author": "charlyoleg",
+	"license": "ISC",
+	"keywords": [
+		"git",
+		"sub-repo",
+		"vcstool",
+		"subg",
+		"vag"
+	],
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/create-vag-api.d.ts",
+			"default": "./dist/create-vag-api.js"
+		}
+	},
+	"bin": {
+		"create-vag": "dist/create-vag-cli.js"
+	},
+	"files": [
+		"dist/create-vag-cli.js",
+		"dist/template/",
+		"!dist/**/*.map",
+		"!dist/**/*.spec.*"
+	],
+	"tsup": {
+		"entry": [
+			"src/create-vag-api.ts",
+			"src/create-vag-ref.ts",
+			"src/create-vag-cli.ts"
+		],
+		"format": "esm",
+		"splitting": false,
+		"dts": false,
+		"sourcemap": false,
+		"clean": true
+	},
+	"prettier": {
+		"useTabs": true,
+		"singleQuote": true,
+		"trailingComma": "none",
+		"printWidth": 100,
+		"plugins": [],
+		"overrides": []
+	},
+	"scripts": {
+		"dev": "tsup --watch",
+		"build": "tsup",
+		"check": "tsc --noEmit",
+		"pretty": "prettier --check .",
+		"format": "prettier --write .",
+		"lint": "eslint .",
+		"test:unit": "vitest",
+		"test:unit:once": "vitest --run",
+		"copy_template": "shx cp -r template dist/",
+		"cleanCopy_template": "run-s clean:template copy_template",
+		"ci": "run-s check build pretty lint test:unit:once cleanCopy_template",
+		"run": "dist/create-vag-cli.js",
+		"run:ref": "dist/create-vag-ref.js tmp2",
+		"run:diff": "diff -rq tmp tmp2",
+		"run:check": "run-s run:ref run:diff",
+		"cycle": "run-s clean ci run",
+		"clean:template": "shx rm -fr dist/template",
+		"clean:build": "shx rm -fr dist",
+		"clean:output": "shx rm -fr tmp tmp2",
+		"clean": "run-s clean:build clean:output"
+	},
+	"dependencies": {
+		"@clack/prompts": "^0.7.0",
+		"chalk": "^5.3.0",
+		"handlebars": "^4.7.8"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.10.0",
+		"@types/eslint__js": "^8.42.3",
+		"@types/node": "^22.7.4",
+		"eslint": "^9.11.1",
+		"eslint-config-prettier": "^9.1.0",
+		"npm-run-all": "^4.1.5",
+		"prettier": "^3.3.3",
+		"shx": "^0.3.4",
+		"tsup": "^8.3.0",
+		"typescript": "^5.6.2",
+		"typescript-eslint": "^8.7.0",
+		"vitest": "^2.1.1"
+	}
+}

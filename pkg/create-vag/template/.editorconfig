@@ -1,0 +1,23 @@
+# .editorconfig of vag-root
+# EditorConfig is awesome: https://EditorConfig.org
+# don't forget the vim-plugin for it
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+indent_style = tab
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# Tab indentation (no size specified)
+[Makefile]
+indent_style = tab
+
+# yaml indentation with spaces
+[*.{yml,yaml}]
+indent_style = space

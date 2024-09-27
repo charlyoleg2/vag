@@ -36,7 +36,10 @@ function isFileBinary(fpath: URL): boolean {
 async function oneFile(onePath: string, cfg2: tCfg2, preDir: string): Promise<void> {
 	try {
 		// compute read and write path
-		const onePathIn = Handlebars.compile(onePath)({ projName: 'projAbc', repoName: 'projAbc_vag' });
+		const onePathIn = Handlebars.compile(onePath)({
+			projName: 'projAbc',
+			repoName: 'projAbc_vag'
+		});
 		const onePathOut = Handlebars.compile(onePath)(cfg2);
 		// try to read the file.handlebars. If it doesn"t exist, just copy the file
 		const fileIn1 = new URL(`./template/${onePathIn}.handlebars`, import.meta.url);

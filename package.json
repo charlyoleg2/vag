@@ -1,6 +1,6 @@
 {
 	"name": "vag_monorepo",
-	"version": "0.0.9",
+	"version": "0.0.10",
 	"description": "The monorepo for Vag packages",
 	"private": true,
 	"repository": {

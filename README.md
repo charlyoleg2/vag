@@ -68,3 +68,33 @@ node dist/vag.js status
 node dist/vag.js diff
 node dist/vag.js push
 ```
+
+
+Upgrade dependencies
+--------------------
+
+```bash
+npm outdated
+npm update --save
+git commit -am 'npm update --save'
+```
+or
+```bash
+npx npm-check-updates
+npx npm-check-updates --upgrade
+npm install
+git commit -am 'npx npm-check-updates --upgrade'
+```
+
+
+Publish a new release
+---------------------
+
+```bash
+npm run versions
+git commit -am 'increment sub-package versions'
+npm version patch
+git push
+git push origin v0.5.3
+```
+

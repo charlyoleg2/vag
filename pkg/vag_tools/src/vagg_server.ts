@@ -6,6 +6,8 @@ import { serve as honoServer } from '@hono/node-server';
 import { serveStatic } from '@hono/node-server/serve-static';
 import { Server as WSserver } from 'socket.io';
 import type { Server as HTTPServer } from 'node:http';
+import { setTimeout as sleep } from 'node:timers/promises';
+import path from 'node:path';
 
 console.log('hello from vagg_server.ts!');
 
@@ -27,10 +29,13 @@ app.get('/api/currDir', (ctx) => {
 });
 
 // static-server middleware
+//const publicAbsPath = path.resolve(import.meta.dirname, './public');
+const publicAbsPath = './public'; // TODO : use Absolute path
+//console.log(`dbg343: publicAbsPath: ${publicAbsPath}`);
 app.use(
 	'*',
 	serveStatic({
-		root: './dist/public', // TODO: change it to absolute path
+		root: publicAbsPath,
 		onNotFound: (path, ctx) => {
 			console.log(`dbg028: ${path} is not found, request to ${ctx.req.path}`);
 		}
@@ -48,4 +53,5 @@ io.on('connection', (socket) => {
 	});
 });
 
+await sleep(100); // wait 100 ms for fun
 console.log(`vagg_server is running on port ${port}`);

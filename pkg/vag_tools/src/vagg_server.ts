@@ -30,7 +30,7 @@ app.get('/api/currDir', (ctx) => {
 
 // static-server middleware
 //const publicAbsPath = path.resolve(import.meta.dirname, './public');
-const publicAbsPath = './public'; // TODO : use Absolute path
+const publicAbsPath = path.resolve('./public'); // TODO : use Absolute path
 //console.log(`dbg343: publicAbsPath: ${publicAbsPath}`);
 app.use(
 	'*',

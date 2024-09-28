@@ -46,30 +46,3 @@ npm run ci
 npm run run
 ```
 
-Upgrade dependencies
---------------------
-
-```bash
-npm outdated
-npm update --save
-git commit -am 'npm update --save'
-```
-or
-```bash
-npx npm-check-updates
-npx npm-check-updates --upgrade
-npm install
-git commit -am 'npx npm-check-updates --upgrade'
-```
-
-Publish a new release
----------------------
-
-```bash
-npm version patch
-git push
-git push origin v0.5.6
-```
-
-
-

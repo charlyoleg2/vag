@@ -7,7 +7,7 @@ import { serveStatic } from '@hono/node-server/serve-static';
 import { Server as WSserver } from 'socket.io';
 import type { Server as HTTPServer } from 'node:http';
 import { setTimeout as sleep } from 'node:timers/promises';
-import path from 'node:path';
+//import path from 'node:path';
 
 console.log('hello from vagg_server.ts!');
 
@@ -30,7 +30,7 @@ app.get('/api/currDir', (ctx) => {
 
 // static-server middleware
 //const publicAbsPath = path.resolve(import.meta.dirname, './public');
-const publicAbsPath = path.resolve('./dist/public'); // TODO : use Absolute path
+const publicAbsPath = './dist/public'; // TODO : use Absolute path
 //console.log(`dbg343: publicAbsPath: ${publicAbsPath}`);
 app.use(
 	'*',

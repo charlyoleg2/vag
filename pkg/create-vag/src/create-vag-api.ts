@@ -46,7 +46,8 @@ async function oneFile(onePath: string, cfg2: tCfg2, preDir: string): Promise<vo
 		const fileIn2 = new URL(`./template/${onePathIn}`, import.meta.url);
 		let fileBin = false;
 		let fileStr2 = '';
-		let fileBuffer2 = Buffer.alloc(0);
+		//let fileBuffer2 = Buffer.alloc(0);
+		const outPath = `${preDir}/${cfg2.repoName}/${onePathOut}`;
 		try {
 			await access(fileIn1);
 			try {
@@ -64,20 +65,21 @@ async function oneFile(onePath: string, cfg2: tCfg2, preDir: string): Promise<vo
 			if (err) {
 				if (isFileBinary(fileIn2)) {
 					fileBin = true;
-					fileBuffer2 = await readFile(fileIn2);
+					const fileBuffer2 = await readFile(fileIn2);
+					await createMissingDir(outPath);
+					await writeFile(outPath, fileBuffer2);
 				} else {
 					fileStr2 = await readFile(fileIn2, { encoding: 'utf8' });
 				}
 			}
 		}
 		//console.log(fileStr2);
-		const outPath = `${preDir}/${cfg2.repoName}/${onePathOut}`;
-		await createMissingDir(outPath);
 		// write the output file\
-		if (fileBin) {
-			await writeFile(outPath, fileBuffer2);
-		} else {
+		if (!fileBin) {
+			await createMissingDir(outPath);
 			await writeFile(outPath, fileStr2);
+			//} else {
+			//await writeFile(outPath, fileBuffer2);
 		}
 	} catch (err) {
 		console.log(`err213: error while generating file ${onePath}`);

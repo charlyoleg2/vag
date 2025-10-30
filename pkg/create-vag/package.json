@@ -1,6 +1,6 @@
 {
 	"name": "create-vag",
-	"version": "0.1.10",
+	"version": "0.1.11",
 	"description": "The npm-initializer for creating a new vag repo",
 	"private": false,
 	"repository": {

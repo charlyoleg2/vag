@@ -84,10 +84,10 @@
 		"clean_all": "run-s clean"
 	},
 	"dependencies": {
-		"@hono/node-server": "^1.19.5",
+		"@hono/node-server": "^1.19.6",
 		"fs-extra": "^11.3.2",
-		"hono": "^4.10.4",
-		"simple-git": "^3.29.0",
+		"hono": "^4.10.6",
+		"simple-git": "^3.30.0",
 		"socket.io": "^4.8.1",
 		"socket.io-client": "^4.8.1",
 		"yaml": "^2.8.1",
@@ -95,15 +95,15 @@
 	},
 	"devDependencies": {
 		"@types/fs-extra": "^11.0.4",
-		"@types/node": "^24.9.2",
-		"@types/yargs": "^17.0.34",
-		"eslint": "^9.38.0",
+		"@types/node": "^24.10.1",
+		"@types/yargs": "^17.0.35",
+		"eslint": "^9.39.1",
 		"npm-run-all2": "^8.0.4",
 		"prettier": "^3.6.2",
 		"shx": "^0.4.0",
-		"tsup": "^8.5.0",
+		"tsup": "^8.5.1",
 		"typescript": "^5.9.3",
-		"typescript-eslint": "^8.46.2",
-		"vitest": "^4.0.5"
+		"typescript-eslint": "^8.47.0",
+		"vitest": "^4.0.10"
 	}
 }

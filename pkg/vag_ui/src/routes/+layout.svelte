@@ -1,5 +1,5 @@
 <script lang="ts">
-	//import { base } from '$app/paths';
+	//import { resolve } from '$app/paths';
 	import { onMount } from 'svelte';
 	import appPackage from '../../package.json';
 	let currDir = 'unknown';

@@ -1,5 +1,5 @@
 <script lang="ts">
-	//import { base } from '$app/paths';
+	//import { resolve } from '$app/paths';
 
 	let lastTask = '0';
 	function doTask(tid: number) {

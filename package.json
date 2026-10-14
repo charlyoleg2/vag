@@ -55,9 +55,9 @@
 		"ls-workspaces": "npm -ws exec -c pwd"
 	},
 	"devDependencies": {
-		"npm-run-all2": "^8.0.4",
-		"serve": "^14.2.5",
+		"npm-run-all2": "^9.0.3",
+		"serve": "^14.2.6",
 		"shx": "^0.4.0",
-		"typedoc": "^0.28.15"
+		"typedoc": "^0.28.20"
 	}
 }

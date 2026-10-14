@@ -10,4 +10,4 @@
 	to read the documentation
 </p>
 
-<p><a href={asset('apidoc/')} rel="external">API docs</a></p>
+<p><a href={asset('apidoc/index.html')} rel="external">API docs</a></p>

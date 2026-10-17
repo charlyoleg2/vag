@@ -1,6 +1,6 @@
 {
 	"name": "vag_tools",
-	"version": "0.1.6",
+	"version": "0.1.7",
 	"description": "api and cli for managing sub-git-repositories",
 	"private": false,
 	"repository": {

@@ -51,7 +51,7 @@
 		"plugins": [],
 		"overrides": []
 	},
-	"tsup": {
+	"tsdown": {
 		"entry": [
 			"src/vag_core.ts",
 			"src/vag_cli.ts",
@@ -59,14 +59,16 @@
 			"src/tester_websocket_client.ts"
 		],
 		"format": "esm",
+		"target": "esnext",
+		"fixedExtension": false,
 		"splitting": false,
 		"dts": true,
 		"sourcemap": true,
 		"clean": true
 	},
 	"scripts": {
-		"dev": "tsup --watch",
-		"build": "tsup",
+		"dev": "tsdown --watch",
+		"build": "tsdown",
 		"check": "tsc --noEmit",
 		"pretty": "prettier --check .",
 		"format": "prettier --write .",
@@ -101,7 +103,7 @@
 		"npm-run-all2": "^9.0.3",
 		"prettier": "^3.9.10",
 		"shx": "^0.4.0",
-		"tsup": "^9.0.0",
+		"tsdown": "^0.23.1",
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.71.2",
 		"vitest": "^5.0.5"
